@@ -1,31 +1,11 @@
-<!doctype html>
-<html lang="es">
-
-<head>
-  <meta charset="utf-8">
-  <title>KultuX — Donde la cultura se encuentra contigo</title>
-
-  <base href="/">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap"
-    rel="stylesheet">
-</head>
-
-<body>
-
+<main>
   <!-- NAV -->
   <nav>
     <a href="#" class="nav-logo">
       <img src="logo.png" alt="Logo KultuX" class="nav-logo-img" />
       <span class="nav-logo-text">Kultu<span>X</span></span>
     </a>
-    <ul>
+    <ul id="navMenu">
       <li><a href="#app">App móvil</a></li>
       <li><a href="#about">Proyecto</a></li>
       <li>
@@ -40,6 +20,11 @@
       </li>
       <li><a href="" class="nav-cta" (click)="descargarAPK($event)">Descargar app</a></li>
     </ul>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
 
   <!-- HERO -->
@@ -81,8 +66,8 @@
         <p>Descarga la app, explora qué hay cerca y disfruta de Extremadura sin perderte nada.</p>
         <a href="" (click)="descargarAPK($event)">Descargar gratis →</a>
       </div>
-      <div class="dual-card manager-side">
-        <div class="dual-tag web">
+      <div class="dual-card user-side">
+        <div class="dual-tag app">
           <svg viewBox="0 0 24 24">
             <rect x="2" y="3" width="20" height="14" rx="2" />
             <line x1="8" y1="21" x2="16" y2="21" />
@@ -163,8 +148,9 @@
       <div class="feature-card reveal">
         <div class="feature-icon">
           <svg viewBox="0 0 24 24">
-            <line x1="12" y1="1" x2="12" y2="23" />
-            <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
+            <path d="M18 5.5A7 7 0 006.5 12a7 7 0 0011.5 6.5" />
+            <line x1="4" y1="9" x2="15" y2="9" />
+            <line x1="4" y1="15" x2="15" y2="15" />
           </svg>
         </div>
         <h3>100% gratuita</h3>
@@ -300,8 +286,9 @@
         </div>
         <div class="meta-item">
           <svg viewBox="0 0 24 24">
-            <line x1="12" y1="1" x2="12" y2="23" />
-            <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
+            <path d="M18 5.5A7 7 0 006.5 12a7 7 0 0011.5 6.5" />
+            <line x1="4" y1="9" x2="15" y2="9" />
+            <line x1="4" y1="15" x2="15" y2="15" />
           </svg>
           100% gratuita
         </div>
@@ -330,6 +317,4 @@
       <li><a href="mailto:hola@kultux.app">Contacto</a></li>
     </ul>
   </footer>
-</body>
-
-</html>
+</main>

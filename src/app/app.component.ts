@@ -19,40 +19,49 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   constructor(private elementRef: ElementRef<HTMLElement>) { }
 
   ngAfterViewInit(): void {
+    // ─── Reveal animation ───────────────────────────────────────────
     const elementosAnimados =
       this.elementRef.nativeElement.querySelectorAll<HTMLElement>('.reveal');
 
-    if (!elementosAnimados.length) {
-      return;
+    if (elementosAnimados.length) {
+      this.observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            const elemento = entry.target as HTMLElement;
+            if (entry.isIntersecting) {
+              elemento.classList.add('visible');
+              this.observer?.unobserve(elemento);
+            }
+          });
+        },
+        { root: null, threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
+      );
+
+      elementosAnimados.forEach((elemento) => this.observer?.observe(elemento));
     }
 
-    this.observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const elemento = entry.target as HTMLElement;
+    // ─── Menú hamburguesa ───────────────────────────────────────────
+    const btn = this.elementRef.nativeElement.querySelector<HTMLElement>('#navHamburger');
+    const menu = this.elementRef.nativeElement.querySelector<HTMLElement>('#navMenu');
 
-          if (entry.isIntersecting) {
-            elemento.classList.add('visible');
-            this.observer?.unobserve(elemento);
-          }
+    if (btn && menu) {
+      btn.addEventListener('click', () => {
+        const open = menu.classList.toggle('nav-open');
+        btn.classList.toggle('is-active', open);
+      });
+
+      menu.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          menu.classList.remove('nav-open');
+          btn.classList.remove('is-active');
         });
-      },
-      {
-        root: null,
-        threshold: 0.08,
-        rootMargin: '0px 0px -40px 0px'
-      }
-    );
-
-    elementosAnimados.forEach((elemento) => {
-      this.observer?.observe(elemento);
-    });
+      });
+    }
   }
 
   descargarAPK(e: MouseEvent): void {
     e.preventDefault();
     e.stopPropagation();
-
     window.location.href =
       "https://github.com/KultuX/kultux-front/releases/download/v1.2.0-alpha/KultuX.v1.2.0.apk";
   }
