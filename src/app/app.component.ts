@@ -7,7 +7,7 @@ import {
 
 const MANUAL_URLS: Record<string, string> = {
   usuario:  'https://github.com/KultuX/kultux.docs/releases/download/v1/Manual_Usuario_Movil.pdf',
-  gestor:   'https://github.com/KultuX/kultux-front/releases/download/v1.3.1-alpha/KultuX_Manual_Gestor.pdf',
+  gestor:   'https://github.com/KultuX/kultux.docs/releases/download/v1/Manual.Gestor.-.KultuX.Web.pdf',
   proyecto: 'https://github.com/KultuX/kultux.docs/releases/download/v1/Definicion.de.proyecto.KultuX.pdf',
   tecnico:  'https://github.com/KultuX/kultux.docs/releases/download/v1/Manual.Tenico.-.KultuX.pdf',
 };
