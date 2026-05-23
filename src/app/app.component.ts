@@ -5,6 +5,13 @@ import {
   OnDestroy
 } from '@angular/core';
 
+const MANUAL_URLS: Record<string, string> = {
+  usuario:  'https://github.com/KultuX/kultux.docs/releases/download/v1/Manual_Usuario_Movil.pdf',
+  gestor:   'https://github.com/KultuX/kultux-front/releases/download/v1.3.1-alpha/KultuX_Manual_Gestor.pdf',
+  proyecto: 'https://github.com/KultuX/kultux.docs/releases/download/v1/Definicion.de.proyecto.KultuX.pdf',
+  tecnico:  'https://github.com/KultuX/kultux.docs/releases/download/v1/Manual.Tenico.-.KultuX.pdf',
+};
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -59,11 +66,28 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     }
   }
 
+  /** Descarga la APK desde GitHub Releases */
   descargarAPK(e: MouseEvent): void {
     e.preventDefault();
     e.stopPropagation();
     window.location.href =
-      "https://github.com/KultuX/kultux-front/releases/download/v1.3.1-alpha/KultuX.v1.3.1.apk";
+      'https://github.com/KultuX/kultux-front/releases/download/KultuX-pre/KultuX-21052026.apk';
+  }
+
+  /**
+   * Descarga uno de los cuatro manuales PDF desde GitHub Releases.
+   * @param e   Evento del click (puede venir del div de la tarjeta)
+   * @param key 'usuario' | 'gestor' | 'proyecto' | 'tecnico'
+   */
+  descargarManual(e: MouseEvent, key: string): void {
+    e.preventDefault();
+    e.stopPropagation();
+    const url = MANUAL_URLS[key];
+    if (!url) return;
+
+    // Abre en nueva pestaña para que el navegador gestione la descarga del PDF
+    // sin abandonar la landing.
+    window.open(url, '_blank', 'noopener,noreferrer');
   }
 
   ngOnDestroy(): void {

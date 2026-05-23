@@ -7,6 +7,8 @@
     </a>
     <ul id="navMenu">
       <li><a href="#app">App móvil</a></li>
+      <li><a href="#web-access">Versión web</a></li>
+      <li><a href="#manuales">Manuales</a></li>
       <li><a href="#about">Proyecto</a></li>
       <li>
         <a href="https://kultux-web.vercel.app/" target="_blank" rel="noopener" class="nav-web-link">
@@ -160,6 +162,74 @@
     </div>
   </div>
 
+  <!-- WEB ACCESS BAND — Sin Android -->
+  <div class="web-access-band" id="web-access">
+    <div class="web-access-inner reveal">
+      <div class="web-access-content">
+        <div class="web-access-badge">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="2" y1="12" x2="22" y2="12" />
+            <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+          </svg>
+          Acceso desde cualquier dispositivo
+        </div>
+        <h2>¿No tienes Android?<br>Prueba la versión web</h2>
+        <p>
+          Accede a todas las actividades, restaurantes y alojamientos de KultuX directamente desde tu navegador,
+          sin instalar nada. Compatible con iOS, ordenador y cualquier dispositivo.
+        </p>
+        <div class="web-access-features">
+          <div class="web-access-feat">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Mismas actividades que en la app
+          </div>
+          <div class="web-access-feat">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Sin instalación, desde el navegador
+          </div>
+          <div class="web-access-feat">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Compatible con iPhone, iPad y PC
+          </div>
+          <div class="web-access-feat">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            100% gratuito, sin registro
+          </div>
+        </div>
+      </div>
+      <div class="web-access-cta-wrap">
+        <div class="web-access-device-hint">
+          <svg viewBox="0 0 24 24">
+            <rect x="5" y="2" width="14" height="20" rx="2"/>
+            <line x1="12" y1="18" x2="12.01" y2="18"/>
+          </svg>
+          <svg viewBox="0 0 24 24">
+            <rect x="2" y="3" width="20" height="14" rx="2"/>
+            <line x1="8" y1="21" x2="16" y2="21"/>
+            <line x1="12" y1="17" x2="12" y2="21"/>
+          </svg>
+          <span>iOS · Android · PC</span>
+        </div>
+        <a href="https://kultux.vercel.app" target="_blank" rel="noopener" class="btn-primary btn-web-access">
+          <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="2" y1="12" x2="22" y2="12" />
+            <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+          </svg>
+          Abrir KultuX en el navegador
+        </a>
+        <p class="web-access-note">También puedes descargar la APK si tienes Android</p>
+        <a href="" class="web-access-apk-link" (click)="descargarAPK($event)">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2v13m0 0l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17" />
+          </svg>
+          Descargar APK para Android →
+        </a>
+      </div>
+    </div>
+  </div>
+
   <!-- WEB PROMO BAND -->
   <div class="web-promo">
     <div class="web-promo-inner reveal">
@@ -197,6 +267,128 @@
         <span class="web-promo-url">kultux-web.vercel.app</span>
       </div>
     </div>
+  </div>
+
+  <!-- MANUALES -->
+  <div class="section-wrap" id="manuales">
+    <p class="section-label reveal">Documentación · Descarga gratuita</p>
+    <h2 class="section-title reveal">Manuales del proyecto</h2>
+    <p class="section-desc reveal">
+      Toda la documentación de KultuX disponible para descarga. Desde la guía de usuario
+      hasta la especificación técnica completa.
+    </p>
+
+    <div class="manuals-grid">
+
+      <div class="manual-card reveal" (click)="descargarManual($event, 'usuario')">
+        <div class="manual-card-header">
+          <div class="manual-icon manual-icon--user">
+            <svg viewBox="0 0 24 24">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 00-3-3.87"/>
+              <path d="M16 3.13a4 4 0 010 7.75"/>
+            </svg>
+          </div>
+          <div class="manual-badge">PDF</div>
+        </div>
+        <div class="manual-card-body">
+          <h3>Manual de usuario</h3>
+          <p>Guía completa para usar la app KultuX: navegación, búsqueda de actividades, filtros y funcionalidades principales.</p>
+        </div>
+        <div class="manual-card-footer">
+          <span class="manual-audience">Para usuarios finales</span>
+          <div class="manual-download-btn">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2v13m0 0l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/>
+            </svg>
+            Descargar
+          </div>
+        </div>
+      </div>
+
+      <div class="manual-card reveal" (click)="descargarManual($event, 'gestor')">
+        <div class="manual-card-header">
+          <div class="manual-icon manual-icon--manager">
+            <svg viewBox="0 0 24 24">
+              <rect x="2" y="3" width="20" height="14" rx="2"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+          </div>
+          <div class="manual-badge">PDF</div>
+        </div>
+        <div class="manual-card-body">
+          <h3>Manual de gestor</h3>
+          <p>Todo lo necesario para publicar y gestionar actividades, restaurantes y alojamientos desde el panel web.</p>
+        </div>
+        <div class="manual-card-footer">
+          <span class="manual-audience">Para empresas y asociaciones</span>
+          <div class="manual-download-btn">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2v13m0 0l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/>
+            </svg>
+            Descargar
+          </div>
+        </div>
+      </div>
+
+      <div class="manual-card reveal" (click)="descargarManual($event, 'proyecto')">
+        <div class="manual-card-header">
+          <div class="manual-icon manual-icon--project">
+            <svg viewBox="0 0 24 24">
+              <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/>
+              <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/>
+            </svg>
+          </div>
+          <div class="manual-badge">PDF</div>
+        </div>
+        <div class="manual-card-body">
+          <h3>Definición del proyecto</h3>
+          <p>Memoria del proyecto: objetivos, alcance, planificación, análisis de requisitos y contexto del desarrollo de KultuX.</p>
+        </div>
+        <div class="manual-card-footer">
+          <span class="manual-audience">Documentación académica</span>
+          <div class="manual-download-btn">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2v13m0 0l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/>
+            </svg>
+            Descargar
+          </div>
+        </div>
+      </div>
+
+      <div class="manual-card reveal" (click)="descargarManual($event, 'tecnico')">
+        <div class="manual-card-header">
+          <div class="manual-icon manual-icon--tech">
+            <svg viewBox="0 0 24 24">
+              <polyline points="16 18 22 12 16 6"/>
+              <polyline points="8 6 2 12 8 18"/>
+            </svg>
+          </div>
+          <div class="manual-badge">PDF</div>
+        </div>
+        <div class="manual-card-body">
+          <h3>Manual técnico</h3>
+          <p>Arquitectura del sistema, stack tecnológico, estructura del código, APIs, base de datos y guía de despliegue.</p>
+        </div>
+        <div class="manual-card-footer">
+          <span class="manual-audience">Para desarrolladores</span>
+          <div class="manual-download-btn">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2v13m0 0l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/>
+            </svg>
+            Descargar
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="manuals-note reveal">
+      Los manuales están alojados en GitHub Releases en el repositorio docs.
+      <a href="https://github.com/KultuX/kultux.docs" target="_blank" rel="noopener">Ver todos los documentos →</a>
+    </p>
   </div>
 
   <!-- ABOUT -->
@@ -313,6 +505,7 @@
     <p class="footer-copy">© 2026 KultuX — Donde la cultura se encuentra contigo</p>
     <ul class="footer-links">
       <li><a href="https://kultux-web.vercel.app/" target="_blank" rel="noopener">Panel gestores ↗</a></li>
+      <li><a href="#manuales">Manuales</a></li>
       <li><a href="#">Privacidad</a></li>
       <li><a href="mailto:hola@kultux.app">Contacto</a></li>
     </ul>
