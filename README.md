@@ -32,3 +32,104 @@ Actúa como punto de entrada al ecosistema, presentando el proyecto y facilitand
 
 ## Arquitectura del proyecto
 ```text
+src/
+├── app/
+│   ├── pages/
+│   ├── components/
+│   ├── services/
+│   └── models/
+├── assets/
+└── environments/
+```
+
+---
+
+## Requisitos
+- Node.js 18+
+- Angular CLI 19+
+
+---
+
+## Variables de entorno
+| Variable | Descripción |
+|---|---|
+| `API_URL` | URL base del API Gateway |
+
+---
+
+## Ejecución local
+
+### Instalar dependencias
+```bash
+npm install
+```
+
+### Servidor de desarrollo
+```bash
+ng serve
+```
+Abre el navegador en `http://localhost:4200/`. La aplicación se recargará automáticamente al modificar cualquier archivo fuente.
+
+### Compilar proyecto
+```bash
+ng build
+```
+Los artefactos de compilación se almacenarán en el directorio `dist/`.
+
+---
+
+## Despliegue en Vercel
+
+### Configuración requerida
+Crear un fichero `vercel.json` en la raíz del proyecto con el siguiente contenido:
+```json
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
+```
+
+### Parámetros de build en Vercel
+| Parámetro | Valor |
+|---|---|
+| Build Command | `npm run build` |
+| Output Directory | `dist/kultux-landingpage/browser` |
+| Install Command | `npm install` |
+
+---
+
+## Generación de componentes
+```bash
+ng generate component component-name
+```
+Para ver todos los esquemas disponibles:
+```bash
+ng generate --help
+```
+
+---
+
+## Tests
+### Unitarios
+```bash
+ng test
+```
+### End-to-end
+```bash
+ng e2e
+```
+
+---
+
+## Recursos adicionales
+- [Angular CLI Overview](https://angular.dev/tools/cli)
+- [Vercel Documentation](https://vercel.com/docs)
+
+---
+
+## Licencia
+Este proyecto está licenciado bajo la licencia MIT.
