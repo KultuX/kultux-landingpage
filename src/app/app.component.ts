@@ -6,10 +6,10 @@ import {
 } from '@angular/core';
 
 const MANUAL_URLS: Record<string, string> = {
-  usuario:  'https://github.com/KultuX/kultux.docs/releases/download/v1/Manual_Usuario_Movil.pdf',
-  gestor:   'https://github.com/KultuX/kultux.docs/releases/download/v1/Manual.Gestor.-.KultuX.Web.pdf',
+  usuario:  'https://github.com/KultuX/kultux.docs/releases/download/v1.2/Manual.Usuario.-.KultuX.App.Movil.pdf',
+  gestor:   'https://github.com/KultuX/kultux.docs/releases/download/v1.2/Definicion.de.proyecto.-.KultuX.pdf',
   proyecto: 'https://github.com/KultuX/kultux.docs/releases/download/v1/Definicion.de.proyecto.KultuX.pdf',
-  tecnico:  'https://github.com/KultuX/kultux.docs/releases/download/v1/Manual.Tenico.-.KultuX.pdf',
+  tecnico:  'https://github.com/KultuX/kultux.docs/releases/download/v1.2/Manual.Tecnico.-.KultuX.pdf',
 };
 
 @Component({
