@@ -71,7 +71,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     e.preventDefault();
     e.stopPropagation();
     window.location.href =
-      'https://github.com/KultuX/kultux-front/releases/download/v1.4.1/KultuX.apk';
+      'https://github.com/KultuX/kultux-front/releases/download/v1.4.2/KultuX.apk';
   }
 
   /**
